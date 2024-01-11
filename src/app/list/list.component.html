@@ -1,28 +1,6 @@
 <mat-toolbar>To do list:</mat-toolbar>
 <mat-card class="todocard">
-  <mat-list role="list">
-    <mat-toolbar
-      *ngFor="let item of todoList | async"
-      class="todoitem"
-      color="primary"
-    >
-      <mat-toolbar-row>
-        <span class="btn material-symbols-outlined" *ngIf="item.isDone">
-          done
-        </span>
-        <span class="btn material-symbols-outlined" *ngIf="!item.isDone">
-          undo
-        </span>
-        <span
-          class="content"
-          [ngClass]="{ 'done-true': item.isDone, 'done-false': !item.isDone }"
-          >{{ item.content }}</span
-        >
-        <span class="btn-delete material-symbols-outlined"> close </span>
-      </mat-toolbar-row>
-    </mat-toolbar>
-  </mat-list>
-  <form class="example-form">
+    <form class="example-form">
     <mat-form-field class="full-width">
       <input
         matInput
@@ -35,4 +13,37 @@
     <button mat-button>Add</button>
     <button mat-button>Save</button>
   </form>
+  <mat-list role="list">
+    <mat-toolbar
+      *ngFor="let item of todoList | async"
+      class="todoitem"
+      color="primary"
+    >
+      <mat-toolbar-row>
+        <mat-icon
+          (click)="markItemAsNotDone(item)"
+          class="btn material-symbols-outlined"
+          *ngIf="item.isDone"
+        >
+          done
+        </mat-icon>
+        <mat-icon
+          (click)="markItemAsDone(item)"
+          class="btn material-symbols-outlined"
+          *ngIf="!item.isDone"
+        >
+          undo
+        </mat-icon>
+        <span
+          class="content"
+          [ngClass]="{ 'done-true': item.isDone, 'done-false': !item.isDone }"
+          >{{ item.content }}</span
+        >
+        <mat-icon class="btn-delete material-symbols-outlined">
+          close
+        </mat-icon>
+      </mat-toolbar-row>
+    </mat-toolbar>
+  </mat-list>
+
 </mat-card>
