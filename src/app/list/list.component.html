@@ -1,16 +1,16 @@
 <mat-toolbar>To do list:</mat-toolbar>
 <mat-card class="todocard">
-  <form class="example-form">
+  <form class="form">
     <mat-form-field class="full-width">
       <input
         matInput
         placeholder="Enter To do"
-        class="textareafull"
+        class="input"
         name="inputValue"
         [(ngModel)]="inputValue.content"
       />
     </mat-form-field>
-    <span class="example-spacer"></span>
+    <span class="spacer"></span>
     <button (click)="addNew()" mat-button>Add</button>
   </form>
   <mat-list role="list">
@@ -19,7 +19,7 @@
       class="todoitem"
       color="primary"
     >
-      <mat-toolbar-row>
+      <mat-toolbar-row class="toolbar">
         <mat-icon
           (click)="markItemAsDoneUndone(item, false)"
           class="btn material-symbols-outlined"

@@ -1,16 +1,22 @@
 .todoitem {
-  mat-toolbar-row {
+  .toolbar {
     display: flex;
     justify-content: start;
-    gap:1rem;
+    gap: 1rem;
 
-    .content{
-      flex:1;
+    .content {
+      flex: 1;
     }
   }
 
   .btn-delete {
     display: none;
+  }
+}
+
+.form {
+  .input {
+    line-height: 3rem;
   }
 }
 
