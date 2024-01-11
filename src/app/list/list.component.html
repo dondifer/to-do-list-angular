@@ -7,11 +7,11 @@
         placeholder="Enter To do"
         class="textareafull"
         name="inputValue"
+        [(ngModel)]="inputValue.content"
       />
     </mat-form-field>
     <span class="example-spacer"></span>
-    <button mat-button>Add</button>
-    <button mat-button>Save</button>
+    <button (click)="addNew()" mat-button>Add</button>
   </form>
   <mat-list role="list">
     <mat-toolbar
@@ -45,4 +45,5 @@
       </mat-toolbar-row>
     </mat-toolbar>
   </mat-list>
+  <span>Limit: {{list.length}} (Undone: {{undoneNumber}})</span>
 </mat-card>

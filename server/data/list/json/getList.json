@@ -2,7 +2,7 @@
   "data": {
     "list": [
       { "id": 1, "content": "compras", "isDone": false },
-      { "id": 1, "content": "pasear perro", "isDone": false }
+      { "id": 2, "content": "pasear perro", "isDone": false }
     ]
   }
 }
