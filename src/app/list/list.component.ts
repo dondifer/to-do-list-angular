@@ -13,8 +13,8 @@ interface Todo {
 })
 export class ListComponent implements OnInit {
   list = [
-    { id: 0, content: 'compras', isDone: false },
-    { id: 1, content: 'pasear perro', isDone: false },
+    { id: 0, content: 'compras', isDone: false},
+    { id: 1, content: 'pasear perro', isDone: false},
   ];
   todoList: Observable<Todo[]> = of(this.list);
 
@@ -22,16 +22,14 @@ export class ListComponent implements OnInit {
 
   constructor(public snackBar: MatSnackBar) {}
 
-  markItemAsDone(item: any) {
-    this.list[item.id].isDone = true;
+  markItemAsDoneUndone(item: any, isDone: boolean) {
+    this.list[item.id].isDone = isDone;
     this.todoList = of(this.list);
-    this.openSnackBar('Item Done!', 'Dismiss');
+    isDone
+      ? this.openSnackBar('Item Done!', 'Dismiss')
+      : this.openSnackBar('Item Not Done!', 'Dismiss');
   }
-  markItemAsNotDone(item: any) {
-    this.list[item.id].isDone = false;
-    this.todoList = of(this.list);
-    this.openSnackBar('Item Not Done!', 'Dismiss');
-  }
+
   openSnackBar(message: string, action: string) {
     this.snackBar.open(message, action, {
       duration: 2000,
