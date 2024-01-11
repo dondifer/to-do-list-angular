@@ -1,0 +1,22 @@
+.todoitem {
+  mat-toolbar-row {
+    display: flex;
+    justify-content: start;
+    gap:1rem;
+
+    .content{
+      flex:1;
+    }
+  }
+
+  .btn-delete {
+    display: none;
+  }
+}
+
+.todoitem:hover {
+  cursor: pointer;
+  .btn-delete {
+    display: block;
+  }
+}

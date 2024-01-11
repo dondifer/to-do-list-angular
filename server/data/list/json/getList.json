@@ -1,8 +1,8 @@
 {
   "data": {
     "list": [
-      { "id": 1, "title": "compras" },
-      { "id": 1, "title": "pasear perro" }
+      { "id": 1, "content": "compras", "isDone": false },
+      { "id": 1, "content": "pasear perro", "isDone": false }
     ]
   }
 }
